@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorP" prefHeight="471.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="familyguy.dunkru.OrderSandwichesController">
+   <children>
+      <ImageView fx:id="sandwichImage" fitHeight="150.0" fitWidth="200.0" layoutX="128.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@sandwich.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="sandwichTitle" layoutX="94.0" layoutY="32.0" text="Order Sandwich" textFill="#f800ba">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="breadLabel" layoutX="25.0" layoutY="262.0" text="Bread">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="proteinLabel" layoutX="25.0" layoutY="317.0" text="Protein">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="addLabel" layoutX="25.0" layoutY="370.0" text="Add-ons">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <GridPane fx:id="breadPane" layoutX="106.0" layoutY="262.0" prefHeight="30.0" prefWidth="343.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <RadioButton fx:id="bagelBread" mnemonicParsing="false" selected="true" text="Bagel">
+               <toggleGroup>
+                  <ToggleGroup fx:id="breadTypeGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="wheatBread" mnemonicParsing="false" text="Whole Wheat" toggleGroup="$breadTypeGroup" GridPane.columnIndex="1" />
+            <RadioButton fx:id="sourBread" mnemonicParsing="false" text="Sour Dough" toggleGroup="$breadTypeGroup" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="proteinPane" layoutX="106.0" layoutY="317.0" prefHeight="30.0" prefWidth="343.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <RadioButton fx:id="beef" mnemonicParsing="false" selected="true" text="Beef">
+               <toggleGroup>
+                  <ToggleGroup fx:id="proteinGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="fish" mnemonicParsing="false" text="Fish" toggleGroup="$proteinGroup" GridPane.columnIndex="1" />
+            <RadioButton fx:id="chicken" mnemonicParsing="false" text="Chicken" toggleGroup="$proteinGroup" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="addPane" layoutX="113.0" layoutY="370.0" prefHeight="30.0" prefWidth="343.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <CheckBox fx:id="lettuce" mnemonicParsing="false" text="Lettuce" />
+            <CheckBox fx:id="tomato" mnemonicParsing="false" text="Tomato" GridPane.columnIndex="1" />
+            <CheckBox fx:id="cheese" mnemonicParsing="false" text="Cheese" GridPane.columnIndex="2" />
+            <CheckBox fx:id="onion" mnemonicParsing="false" text="Onion" GridPane.columnIndex="3" />
+         </children>
+      </GridPane>
+      <Label fx:id="subLabel" layoutX="25.0" layoutY="418.0" text="Subtotal:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="total" editable="false" layoutX="119.0" layoutY="420.0" text="\$0.00" />
+      <Button fx:id="addOrder" layoutX="336.0" layoutY="420.0" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order" />
+   </children>
+</AnchorPane>

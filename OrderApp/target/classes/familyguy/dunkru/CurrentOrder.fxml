@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="466.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="familyguy.dunkru.CurrentOrderController">
+   <children>
+      <Label layoutX="24.0" layoutY="39.0" text="Current Order" textFill="#5f19c9">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <ListView fx:id="itemsList" layoutX="24.0" layoutY="177.0" prefHeight="235.0" prefWidth="558.0" />
+      <TextField fx:id="subtotal" layoutX="401.0" layoutY="41.0" />
+      <TextField fx:id="salesTax" layoutX="401.0" layoutY="87.0" />
+      <TextField fx:id="total" layoutX="401.0" layoutY="135.0" />
+      <Label layoutX="341.0" layoutY="46.0" text="Subtotal" />
+      <Label layoutX="300.0" layoutY="91.0" text="Sales Tax (%6.625)" />
+      <Label layoutX="349.0" layoutY="139.0" text="Total" />
+      <Button fx:id="removeButton" layoutX="89.0" layoutY="419.0" mnemonicParsing="false" onAction="#removeOrder" text="Remove Current Item" />
+      <Button fx:id="placeOrderButton" layoutX="424.0" layoutY="419.0" mnemonicParsing="false" onAction="#placeOrders" text="Place Order" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

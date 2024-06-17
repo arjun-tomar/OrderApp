@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="498.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="familyguy.dunkru.OrderDonutsController">
+   <children>
+      <ChoiceBox fx:id="donutChoiceBox" layoutX="44.0" layoutY="150.0" prefWidth="150.0" />
+      <ImageView fx:id="donutImage" fitHeight="137.0" fitWidth="215.0" layoutX="354.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@yeast_donut.jpg" />
+         </image></ImageView>
+      <ListView fx:id="donutListView" editable="true" layoutX="44.0" layoutY="231.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="donutListViewTransfer" layoutX="357.0" layoutY="231.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="transferTo" layoutX="270.0" layoutY="284.0" mnemonicParsing="false" onAction="#getFlavor" text="ADD" />
+      <Button fx:id="transferFrom" layoutX="263.0" layoutY="373.0" mnemonicParsing="false" onAction="#removeFlavor" text="REMOVE" />
+      <ComboBox fx:id="donutQuantity" layoutX="263.0" layoutY="205.0" prefHeight="25.0" prefWidth="54.0" promptText="1" />
+      <Label fx:id="labelSubtotal" layoutX="119.0" layoutY="445.0" text="Order Subtotal:" />
+      <TextField fx:id="textSubtotal" editable="false" layoutX="225.0" layoutY="441.0" text="\$0.00" />
+      <Button fx:id="addToOrder" layoutX="392.0" layoutY="441.0" mnemonicParsing="false" onAction="#addToCurrent" text="Add to Current Order" />
+      <Label fx:id="OrderDonutsBillboard" layoutX="196.0" layoutY="25.0" text="Order Donuts" textFill="#2e2ea8">
+         <font>
+            <Font name="System Bold Italic" size="33.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
